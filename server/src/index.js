@@ -8,9 +8,8 @@ import path from "path"
 import job from "./lib/cron.js"
 import clerkWebhook from "./webhooks/clerk.webhook.js"
 import authRoutes from "./routes/auth.route.js"
- import messageRoutes from "./routes/message.route.js"
-
-const app = express()
+import messageRoutes from "./routes/message.route.js"
+import {app,server} from "./lib/socket.js"
 
 const PORT = process.env.PORT || 5000;
 const CLIENT_URL = process.env.CLIENT_URL || "http://localhost:5173";
@@ -37,7 +36,7 @@ if(fs.existsSync(publicDir)){
     })
 }
 
-app.listen(PORT, () => {
+server.listen(PORT, () => {
     connectDB()
     console.log(`Server running on port ${PORT}`)
 
