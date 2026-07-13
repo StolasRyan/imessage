@@ -1,7 +1,10 @@
+import toast from "react-hot-toast"
 
 const ChatPage = () => {
   return (
-    <div>ChatPage</div>
+    <button
+    onClick={() => toast.success("Hello")}
+    >Click</button>
   )
 }
 
