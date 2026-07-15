@@ -3,6 +3,7 @@ import { axiosInstance } from "../lib/axios";
 import { useAuthStore } from "./useAuthStore";
 import { toast } from "react-hot-toast";
 import { persist } from "zustand/middleware"; 
+import {playNotificationSound} from "../lib/sound"
 
 export const useChatStore = create(persist(
   (set, get) => ({
@@ -85,6 +86,7 @@ export const useChatStore = create(persist(
       if (String(newMessage.senderId) !== String(userId)) return;
       set({ messages: [...get().messages, newMessage] });
       get().getConversations();
+      if (get().isSoundEnabled) playNotificationSound();
     });
   },
   unsubscribeFromMessages: () => {
