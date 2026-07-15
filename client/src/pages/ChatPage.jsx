@@ -39,7 +39,7 @@ const ChatPage = () => {
 
   return (
   <div className="flex h-dvh flex-col overflow-hidden p-2 sm:p-3 md:p-8" style={frameStyle}>
-      <div className="mx-auto flex w-full max-w-6xl felx-1 overflow-hidden rounded-2xl border border-border bg-background text-foreground">
+      <div className="mx-auto flex w-full max-w-6xl flex-1 overflow-hidden rounded-2xl border border-border bg-background text-foreground">
         <ChatSidebar/>
         <div className={`flex-1 flex-col overflow-hidden ${
         !isLargeScreen && !activeConversationId ? "hidden lg:flex" : "flex"

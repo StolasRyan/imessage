@@ -87,7 +87,7 @@ const ChatSidebar = () => {
         selectedKey={sidebarTab}
         onSelectionChange={(key) => setSidebarTab(String(key))}
         variant="secondary"
-        className="flex flex-1 flex-col overflow-y-auto"
+        className="flex min-h-0 flex-1 flex-col"
       >
         <div className="shrink-0 border-b border-border px-3 pb-2 pt-2">
           <SearchField
@@ -120,7 +120,7 @@ const ChatSidebar = () => {
 
         <Tabs.Panel
           id="chats"
-          className="flex-1 overflow-x-hidden overflow-y-auto outline-none"
+          className="flex-1 min-h-0 overflow-x-hidden overflow-y-auto outline-none"
         >
           {filteredConversations.length === 0 ? (
             <p className="px-4 py-6 text-center text-sm text-muted">
@@ -138,7 +138,7 @@ const ChatSidebar = () => {
           )}
         </Tabs.Panel>
 
-        <Tabs.Panel id="users" className="flex-1 overflow-x-hidden overflow-y-auto outline-none">
+        <Tabs.Panel id="users" className="flex-1 min-h-0 overflow-x-hidden overflow-y-auto outline-none">
           {filteredUsers.length === 0 ? (
             <p className="px-4 py-6 text-center text-sm text-muted">No people match your search.</p>
           ) : (
